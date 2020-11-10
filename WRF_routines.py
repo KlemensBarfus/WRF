@@ -30,3 +30,19 @@ def WRF_filename_from_date(date, n_domain):
   str3 = hour+":"+minute+":"+second
   res_filename = str1+str2+str3
   return res_filename
+
+def deaccumulate_wrf_precipitation_data(wrf_data):
+  # deaccumulates WRF precipitation data and transfers it to mm/h
+  import numpy
+  nxy = wrf_data.shape
+  wrf_data_new = np.copy(wrf_data)
+  n_times = nxy[0]
+  ny = nxy[1]
+  nx = nxy[2]
+  for i in range(0, n_times):
+    if(i == 0):
+      temp = wrf_data[i,:,:]
+    else:
+      temp = wrf_data[i,:,:] - wrf_data[i-1,:,:]
+    wrf_data_new[i,:,:] = temp * 12 # mm to mm/h                                                                                                                                                            
+  return wrf_data_new
