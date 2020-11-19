@@ -21,6 +21,6 @@ def WRF_pressure_half_level(f_wrf, full_level_pressure=None):
   pressure_half_levels[:,n_levels:n_levels+1,:,:] = pressure_top
   if(full_level_pressure == None):
     return pressure_half_levels, full_level_pressure
-  else
+  else:
     return pressure_half_levels
 
