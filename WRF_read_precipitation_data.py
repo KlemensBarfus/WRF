@@ -3,7 +3,7 @@ def WRF_read_precipitation_data(file_wrf):
   # file_wrf is either a file handle or a filename
   from netCDF4 import Dataset
   if(type(file_wrf) is str):
-    f_wrf = Dataset(filename_wrf, "r", format="NetCDF4")
+    f_wrf = Dataset(file_wrf, "r", format="NetCDF4")
   else:
     f_wrf = file_wrf
   rainc = f_wrf.variables["RAINC"][:]
