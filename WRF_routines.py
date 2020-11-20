@@ -1,5 +1,5 @@
 
-def date_from_WRF_filename(wrf_filename):
+def WRF_date_from_filename(wrf_filename):
   # e.g. "wrf_d04_2071-07-16_17:30:00"                                                                                                                                                                      
   import datetime
   temp_str = wrf_filename.split("_")
