@@ -4,10 +4,12 @@ def WRF_pressure_half_level(f_wrf, full_level_pressure=None):
   # 'f_wrf' is the file handle for the open WRF file
   from netCDF4 import Dataset
   import numpy as np
+  provide_full_level_pressure = False
   if(full_level_pressure is None):
     pertubation_pressure = f_wrf.variables["P"][:] # P(Time, bottom_top, south_north, west_east), [Pa]
     base_state_pressure = f_wrf.variables["PB"][:] # PB(Time, bottom_top, south_north, west_east), [Pa]
-    full_level_pressure = pertubation_pressure + base_state_pressure # in Pa 
+    full_level_pressure = pertubation_pressure + base_state_pressure # in Pa
+    provide_full_level_pressure = True 
   n_temp = full_level_pressure.shape
   n_time = n_temp[0]
   n_levels = n_temp[1]
@@ -21,7 +23,7 @@ def WRF_pressure_half_level(f_wrf, full_level_pressure=None):
   pressure_half_levels[:,0:1,:,:] = pressure_surface
   pressure_half_levels[:,1:n_levels,:,:] = (full_level_pressure[:,0:n_levels-1,:,:] + full_level_pressure[:,1:n_levels,:,:]) / 2.0
   pressure_half_levels[:,n_levels:n_levels+1,:,:] = pressure_top
-  if(full_level_pressure is None):
+  if(provide_full_level_pressure == True):
     return pressure_half_levels, full_level_pressure
   else:
     return pressure_half_levels
