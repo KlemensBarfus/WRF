@@ -1,0 +1,2 @@
+gfortran -ffree-line-length-none -c thermodynamic_routines.f90
+f2py -m mod_vintp2p_afterburner --opt='-O3 -ffree-line-length-none' -c thermodynamic_routines.f90 vintp2p_afterburner.f90

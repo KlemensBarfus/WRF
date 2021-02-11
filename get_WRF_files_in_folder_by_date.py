@@ -1,9 +1,9 @@
 def get_WRF_files_in_folder_by_date(path, start_date, stop_date, domain):
-  # gets all wrf files (into a list) for a certain domain from a folder defined by                                                                                                                          
-  # path: path where the files are                                                                                                                                                                          
-  # start_date: start date as datetime object                                                                                                                                                               
-  # stop_date: stop_date as datetime object                                                                                                                                                                 
-  # strucure of the filename is "wrf_d04_2013-09-07_22:00:00"                                                                                                                                               
+  # gets all wrf files (into a list) for a certain domain from a folder defined by
+  # path: path where the files are
+  # start_date: start date as datetime object
+  # stop_date: stop_date as datetime object
+  # strucure of the filename is "wrf_d04_2013-09-07_22:00:00"
   import datetime
   import glob
   import numpy as np
@@ -17,7 +17,7 @@ def get_WRF_files_in_folder_by_date(path, start_date, stop_date, domain):
     temp_str2 = filename_temp.split("_")
     temp_str3 = temp_str2[2]
     temp_str4 = temp_str3.split("-")
-    year_temp = int(temp_str4[0])
+    year_temp = int(temp_str4[0]) 
     month_temp = int(temp_str4[1])
     day_temp = int(temp_str4[2])
     temp_str3 = temp_str2[3]
