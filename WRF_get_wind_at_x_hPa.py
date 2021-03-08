@@ -48,6 +48,6 @@ def WRF_get_wind_at_x_hPa(file_wrf, pressure_level_hPa):
   v_wind_x_hPa = mod_vintp2p_afterburner.vintp2p_afterburner(var,np.copy(vwind,order='F'), np.copy(plevo,order='F'), np.copy(press_half_level,order='F'), \
                               np.copy(press,order='F'), np.copy(geopot_half_level, order='F'), np.copy(geopot,order='F'), np.copy(temperature,order='F'))
 
-  u_wind_x_hPa = np.squeeze(u_wind_x_hPa)
-  v_wind_x_hPa = np.squeeze(v_wind_x_hPa)
+  u_wind_x_hPa = np.squeeze(u_wind_x_hPa, axis=1) # only squeeze z-axis
+  v_wind_x_hPa = np.squeeze(v_wind_x_hPa, axis=1)
   return u_wind_x_hPa, v_wind_x_hPa
