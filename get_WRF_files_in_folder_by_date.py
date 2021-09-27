@@ -11,7 +11,7 @@ def get_WRF_files_in_folder_by_date(path, start_date, stop_date, domain):
   import sys
   # check if path exists
   if(os.path.exists(path) == False):
-    sys.exit("ERROR: get_WRF_files_in_folder_by_date: path does not exist")
+    sys.exit("ERROR: get_WRF_files_in_folder_by_date: path "+path+" does not exist")
   else:  
     domain_str = str(domain).zfill(2)
     all_wrf_files = glob.glob(path+"wrf_d"+domain_str+"_*")
