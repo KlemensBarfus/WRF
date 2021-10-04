@@ -66,6 +66,6 @@ def WRF_plot_domain(filename,m, rgb, latname='XLAT_M', lonname='XLONG_M'):
     lat_temp = lat[iy,0]  
     xy_all[jj,:] = m(lon_temp, lat_temp)
     jj = jj + 1
-  poly = Polygon(xy_all, color='r', edgecolor=rgb, fill=False, linewidth=2, zorder=10) #, transform=IdentityTransform())
+  poly = Polygon(xy_all, color=rgb, edgecolor=rgb, fill=False, linewidth=2, zorder=10) #, transform=IdentityTransform())
   plt.gca().add_patch(poly)
   
