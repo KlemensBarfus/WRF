@@ -1,5 +1,6 @@
 # links the restart files to the directory where WRF runs
-# directory where restart files are stored is read from namelist.input variable 
+# directory where restart files are stored is read from namelist.input variable
+# run from the directory where WRF is started as "python3 link_restart_files.py"
 
 import os
 import glob
