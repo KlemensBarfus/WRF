@@ -92,4 +92,4 @@ def intersection_two_arcs_on_a_sphere(lat1a,lon1a,lat1b,lon1b,lat2a,lon2a,lat2b,
         res3 = i2c
       
   res_radius, res_lat, res_lon = xyz_to_spherical(res1,res2,res3)
-  return res_lat res_lon
+  return res_lat, res_lon
