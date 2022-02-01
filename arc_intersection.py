@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb  1 10:36:06 2022
-
-@author: KBarfus
-"""
-
 # https://blog.mbedded.ninja/mathematics/geometry/spherical-geometry/finding-the-intersection-of-two-arcs-that-lie-on-a-sphere/                                                                             
 import numpy as np
 import math
