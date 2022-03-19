@@ -80,8 +80,8 @@ def read_WRF_plot_coordinates(filename):
   f.close()
   return lat_plot, lon_plot
   
-filename = '/home/klemens/Python_routines/wrf_d04_1979-06-21_22:30:00'
-save_WRF_coordinates(filename)
-filename = '/home/klemens/Python_routines/WRF_coordinates_d04.nc'
-lat, lon = read_WRF_coordinates(filename)
-lat_plot, lon_plot = read_WRF_plot_coordinates(filename)
+#filename = '/home/klemens/Python_routines/wrf_d04_1979-06-21_22:30:00'
+#save_WRF_coordinates(filename)
+#filename = '/home/klemens/Python_routines/WRF_coordinates_d04.nc'
+#lat, lon = read_WRF_coordinates(filename)
+#lat_plot, lon_plot = read_WRF_plot_coordinates(filename)
