@@ -20,8 +20,13 @@ def get_WRF_coordinates(filename_wrf):
   import netCDF4
 
   nc_file = netCDF4.Dataset(filename_wrf)
-  lon = nc_file.variables['XLONG'][:,:,:] # XLAT(Time, south_north, west_east)
-  lat = nc_file.variables['XLAT'][:,:,:]
+  if('XLONG' in nc_file.variables):
+    lon = nc_file.variables['XLONG'][:,:,:] # XLAT(Time, south_north, west_east)
+    lat = nc_file.variables['XLAT'][:,:,:]
+  else:
+    if('XLONG_M' in nc_file.variables):
+      lon = nc_file.variables['XLONG_M'][:,:,:] # XLAT(Time, south_north, west_east)
+      lat = nc_file.variables['XLAT_M'][:,:,:]
   nc_file.close()
   lon = np.squeeze(lon[0,:,:])
   lat = np.squeeze(lat[0,:,:])
