@@ -56,7 +56,7 @@ def get_val_in_proper_type(string, german=False):
   return flag_number, val
     
 
-def read_namelist(filename):
+def WRF_read_namelist(filename):
   import os
   # check if namelist.wps or namelist.input
   if(".wps" in filename):
@@ -164,7 +164,7 @@ def namelist_wps_formatting(key):
 
     
 
-def write_namelist(filename,r):
+def WRF_write_namelist(filename,r):
   f_out = open(filename, 'wt')
   wps_flag = False
   input_flag = False
