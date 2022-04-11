@@ -10,6 +10,7 @@ def WRF_check_if_output_file_exists(folder,date,domain):
   # written by K. Barfus, 2/2022    
   import datetime
   import os
+  from WRF_get_date_for_filename import WRF_get_date_for_filename
   temp_date_str = WRF_get_date_for_filename(date)
   test_filename = folder+"wrf_d0"+str(domain)+"_"+temp_date_str
   flag = os.path.exists(test_filename)
