@@ -41,8 +41,8 @@ def WRF_link_restart_files(path_rstfiles, target_dir="./"):
   rstfiles = WRF_get_list_of_restart_files(path_rstfiles)
   for rstfile in rstfiles:                                                                                                                                                                                
     temp_str = rstfile.split("/")                                                                                                                                                                         
-    linkname = home_folder+temp_str[len(temp_str)-1]                                                                                                                                                      
-    sys_cmd = "ln -sf "+rstfile+" "+target_dir+linkname
+    linkname = target_dir+temp_str[len(temp_str)-1]                                                                                                                                                      
+    sys_cmd = "ln -sf "+rstfile+" "+linkname
     os.system(sys_cmd)
 
 def WRF_remove_rstfiles_in_dir(path="", rst_files=[], domain=None):
