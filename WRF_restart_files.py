@@ -38,7 +38,7 @@ def WRF_unlink_restart_files(folder):
 def WRF_link_restart_files(path_rstfiles, target_dir="./"):
   # links all restart files from "folder"
   import os 
-  rstfiles = get_list_of_restart_files(path_rstfiles)
+  rstfiles = WRF_get_list_of_restart_files(path_rstfiles)
   for rstfile in rstfiles:                                                                                                                                                                                
     temp_str = rstfile.split("/")                                                                                                                                                                         
     linkname = home_folder+temp_str[len(temp_str)-1]                                                                                                                                                      
