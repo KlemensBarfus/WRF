@@ -15,7 +15,7 @@ def WRF_get_date_from_filename(filename):
   # datetime object
   # written by K. Barfus 3/2022
   import datetime
-  i = filename.rfind("wrf")
+  i = filename.rfind("wrf_d")
   temp_str = filename[i:]
   temp_str2 = temp_str.split("_")
   date_str = temp_str2[2]
