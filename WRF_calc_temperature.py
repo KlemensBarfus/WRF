@@ -6,11 +6,11 @@ def WRF_calc_temperature(theta,P):
 
   theta = np.asarray(theta)
   P = np.asarray(P)
-  scalarinput = False
+  scalar_input = False
   if theta.ndim == 0:
     theta = theta[None]  # Makes x 1D
     P = P[None]
-    scalarinput = True
+    scalar_input = True
 
   Rd_Cp = 0.28571 #(dimensionless)
   T =  theta*((P/100000. )**(Rd_Cp))
